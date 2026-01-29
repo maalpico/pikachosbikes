@@ -6,7 +6,7 @@
   "start": "ng serve",
   "dev": "ng serve",
   "build": "ng build",
-  "build:ssr": "npm exec ng build",
+  "build:ssr": "ng build && ng run pikachosb:server",
   "watch": "ng build --watch --configuration development",
   "test": "ng test",
   "serve:ssr": "node dist/pikachosb/server/server.mjs"
@@ -14,6 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/common": "^19.1.0",
+    "@angular/cli": "^19.2.19",
     "@angular/compiler": "^19.1.0",
     "@angular/core": "^19.1.0",
     "@angular/forms": "^19.1.0",
@@ -30,7 +31,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.8",
-    "@angular/cli": "^19.2.19",
     "@angular/compiler-cli": "^19.1.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
