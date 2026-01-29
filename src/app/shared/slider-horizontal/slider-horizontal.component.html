@@ -1,0 +1,14 @@
+<div class="overflow-x-auto overflow-y-hidden snap-x snap-mandatory px-4 touch-auto scrollbar-hide">
+  <div class="flex gap-4">
+    <div *ngFor="let slide of slides" 
+         class="relative flex-shrink-0 snap-start rounded-xl overflow-hidden cursor-pointer transform transition-transform duration-300 hover:scale-105
+                min-w-[240px] md:min-w-[280px]">
+      <img [src]="slide.url" [alt]="slide.text" 
+           class="w-full h-[350px] md:h-[400px] object-cover" />
+      <a [href]="slide.link" target="_blank" 
+         class="absolute bottom-7 left-1/2 -translate-x-1/2 bg-black hover:bg-[#0C3249] hover:shadow-white shadow-md shadow-black bg-opacity-90 text-white font-semibold px-5 py-3 rounded-full text-sm no-underline w-48 text-center">
+        {{ slide.text }}
+      </a>
+    </div>
+  </div>
+</div>

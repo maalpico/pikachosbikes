@@ -1,0 +1,59 @@
+.bikefit-movil {
+  width: 100%;
+  height: 200px; /* mobile por defecto */
+  background-image: url('/assets/images/bikefit.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.taller-de-servicio {
+  width: 100%;
+  height: 200px; /* mobile por defecto */
+  background-image: url('/assets/images/taller-de-servicio.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* CATEGORIAS */
+.cat {
+    overflow: hidden;
+    position: relative;
+     height: 200px;
+}
+.cat span {
+    left: 0px;
+    font-size: 72px;
+    position:absolute;
+    bottom: 20px;
+}
+.cat-cascos {
+  /* mobile por defecto */
+  background-image: url('/assets/images/cat/cascos.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .bikefit-movil, .taller-de-servicio {
+    height: 350px; /* desktop */
+  }
+
+  .cat {
+    height: 300px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .bikefit-movil {
+    height: 400px; /* pantallas grandes */
+  }
+  .cat {
+    height: 400px;
+  }
+}

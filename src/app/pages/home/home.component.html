@@ -1,0 +1,147 @@
+
+
+<app-slider [images]="images"></app-slider>
+<section class="home-content max-w-max mx-auto px-4 google-sans-400">
+
+
+ <div class=" mt-6 md:mt-10 md:mx-2 text-2xl md:text-5xl text-[#0C3249] uppercase"><span class="block text-xs/4 sm:text-lg/4">No te lo puedes perder</span>Nuevos <span class="font-bold">Lanzamientos</span></div>
+  <app-slider-horizontal [slides]="slides"></app-slider-horizontal>
+
+<div class=" mt-6 md:mt-10 md:mx-2 text-2xl md:text-5xl text-[#0C3249] uppercase"><span class="block text-xs/4 sm:text-lg/4">una bicicleta a tu medida</span>BIKE<span class="font-bold">FIT</span></div>
+
+  <div class="flex flex-col md:flex-row w-full mx-auto overflow-hidden">
+    <!-- Columna izquierda (desktop) -->
+    <div class="hidden md:flex md:w-1/3 items-center bg-[#0C3249] justify-center p-6">
+      <span class="text-left text-lg text-white md:text-4xl/9 ">Obten el mejor <span class="font-bold">rendimiento</span> de una bibicleta adaptada para cada ciclista</span>
+
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="w-full md:w-2/3 p-6 relative rounded-t-xl md:rounded-none bikefit-movil">
+           <a href="/" target="_blank" 
+         class="absolute shadow-md shadow-black bottom-16 md:bottom-44 left-1/2 -translate-x-1/2 hover:bg-black bg-[#0C3249] font-semibold bg-opacity-90 text-white px-5 py-3 rounded-full text-sm no-underline w-44 text-center">
+        Agenda tu cita
+      </a>
+    </div>
+
+    <!-- Columna tercera (solo mobile) -->
+    <div class="w-full bg-black p-6 rounded-b-xl md:hidden">
+      <p class="text-white text-sm font-medium">Obten el mejor rendimiento de tu bicicleta</p>
+    </div>
+  </div>
+
+<div class=" mt-6 md:mt-10 md:mx-2 text-2xl md:text-5xl text-[#0C3249] uppercase"><span class="block text-xs/4 sm:text-lg/4">Explora</span>Nuestro<span class="font-bold">Catalogo</span></div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-0.5">
+  <div 
+    *ngFor="let cat of categories"
+    class="relative w-full h-52 md:h-80 overflow-hidden rounded-lg group cursor-pointer"
+    [style.background-image]="'url(' + cat.img + ')'">
+
+    <!-- Zoom de background -->
+    <div class="absolute inset-0 bg-center bg-cover transition-transform duration-500 transform group-hover:scale-110" 
+         [style.background-image]="'url(' + cat.img + ')'" style="z-index:0;"></div>
+
+    <!-- Overlay negro -->
+    <div class="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-500 group-hover:opacity-0 z-10"></div>
+
+    <!-- Texto oculto que aparece desde abajo y sube al centro -->
+    <span class="absolute bottom-32 sm:bottom-0 left-1/2 -translate-x-1/2 translate-y-full opacity-60 sm:opacity-20 text-white text-center text-4xl sm:text-6xl font-bold transition-all duration-500 group-hover:top-1/2 group-hover:translate-y-[-15%] group-hover:opacity-100 z-20 px-2">
+      {{ cat.name }}
+    </span>
+  </div>
+</div>
+
+<div class=" mt-6 md:mt-10 md:mx-2 text-2xl md:text-5xl text-[#0C3249] uppercase"><span class="block text-xs/4 sm:text-lg/4">specialized autorizado</span>Taller de <span class="font-bold">Servicio</span></div>
+  <div class="flex flex-col md:flex-row w-full mx-auto overflow-hidden">
+    <!-- Columna izquierda (desktop) -->
+         <div class="w-full md:w-2/3 p-6 relative rounded-t-xl md:rounded-none taller-de-servicio">
+           <a href="/" target="_blank" 
+         class="absolute shadow-md shadow-black bottom-16 md:bottom-44 left-1/2 -translate-x-1/2 hover:bg-black bg-[#0C3249] font-semibold bg-opacity-90 text-white px-5 py-3 rounded-full text-sm no-underline w-44 text-center">
+        Agenda tu servicio
+      </a>
+    </div>
+
+
+
+    <!-- Columna derecha -->
+    <div class="hidden md:flex md:w-1/3 items-center bg-[#0C3249] justify-center p-6">
+      <span class="text-right text-lg text-white md:text-4xl/9 ">Contamos con el <span class="font-extrabold">mejor equipo</span> capacitado y las mejores herramientas de trabajo</span>
+
+    </div>
+
+    <!-- Columna tercera (solo mobile) -->
+    <div class="w-full bg-black p-6 rounded-b-xl md:hidden">
+      <p class="text-white text-sm font-medium">Personal autorizado y capacitado</p>
+    </div>
+  </div>
+
+  
+</section>
+<div class="my-10 py-10"></div>
+<footer class="bg-[#0C3249] shadow-[0_-4px_12px_rgba(0,0,0,0.4)]">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    
+    <!-- Grid principal -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="flex flex-col items-center md:items-start text-center text-base md:text-left gap-2">
+        <p class="font-semibold text-lg">Sucursal Kino</p>
+
+        <p class=" opacity-80 leading-relaxed">
+         Blvd. Kino 304 A, Colonia Pitic (Frente al Parque La Ruina)
+        </p>
+
+        <p class=" opacity-80">
+          Tel: (662) 420 3680
+        </p>
+      </div>
+       <div class="flex flex-col items-center md:items-start text-center text-base md:text-left gap-2">
+        <p class="font-semibold text-lg">Sucursal Quiroga</p>
+
+        <p class="opacity-80 leading-relaxed">
+         Blvd. Antonio Quiroga 965-Int 7, 83224
+        </p>
+
+        <p class="topacity-80">
+          Tel: (662) 145 4944
+        </p>
+
+        <p class=" opacity-80">
+          Hermosillo, Sonora
+        </p>
+      </div>
+
+      <!-- COLUMNA DERECHA -->
+      <div class="flex flex-col items-center md:items-end text-center md:text-right gap-2">
+        
+        <img 
+          src="/assets/images/pikachosbikes-logo-150x80.png" 
+          alt="Pikachos Bikes"
+          class="h-auto max-w-[160px]"
+        />
+
+        <div class="flex flex-col items-center md:items-end">
+          <span class="text-sm opacity-80">Distribuidor autorizado</span>
+
+          <img 
+            src="/assets/images/specialized-logo.png" 
+            alt="Specialized"
+            class="mt-1 h-auto max-w-[140px]"
+          />
+        </div>
+
+        <p class="text-sm opacity-60 mt-2">
+          © 2026 Todos los derechos reservados
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+

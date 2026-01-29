@@ -1,0 +1,12 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "typescript": "html"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.hover.enabled": "on",
+  "tailwindCSS.hover": true,
+  "tailwindCSS.emmetCompletions": true
+}

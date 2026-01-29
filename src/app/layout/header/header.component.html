@@ -1,0 +1,56 @@
+<header class="header" [class.scrolled]="isScrolled" [class.hidden]="isHidden">
+  <!-- Mobile hamburger -->
+  <button
+    class="burger"
+    [class.open]="isOpen"
+    (click)="toggle()"
+    aria-label="Abrir menú"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Logo -->
+  <div class="logo">
+    <img src="/assets/images/pikachosbikes-logo-150x80.png" class="w-24 sm:w-32" alt="Pikachos Bikes" title="Pikachos Bikes">
+  </div>
+
+  <!-- Desktop Menu -->
+  <nav class="menu-desktop google-sans-400 uppercase text-sm text-[#F0E8D3]">
+    <a routerLink="/">Bicicletas</a>
+    <a routerLink="/productos">Accesorios</a>
+    <a routerLink="/contacto">Cascos</a>
+    <a routerLink="/contacto">Componentes</a>
+    <a routerLink="/contacto">Racks</a>
+    <a routerLink="/contacto">Zapatos</a>
+  </nav>
+
+  <!-- Iconos -->
+  <div class="icons">
+    <!-- Usuario -->
+    <a routerLink="/perfil" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#EFE8D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+    </a>
+    <!-- Carrito -->
+    <a routerLink="/carrito" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#EFE8D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- Overlay y Drawer siguen igual -->
+<div class="overlay" [class.show]="isOpen" (click)="close()"></div>
+
+<nav class="drawer" [class.open]="isOpen">
+  <a routerLink="/" (click)="close()">Inicio</a>
+  <a routerLink="/productos" (click)="close()">Productos</a>
+  <a routerLink="/contacto" (click)="close()">Contacto</a>
+</nav>

@@ -1,0 +1,174 @@
+/* ===== HEADER ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #0C3249;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+ 
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.header.hidden {
+  transform: translateY(-100%);
+}
+/* =====================
+   LOGO
+===================== */
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 90%;             /* NUNCA rompe el header */
+  max-width: 160px;             /* evita logos gigantes */
+  object-fit: contain;
+}
+
+/* ===== BURGER ===== */
+.burger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===== DESKTOP MENU ===== */
+.menu-desktop {
+  margin-left: auto;
+  display: none;
+}
+
+.menu-desktop a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== DRAWER ===== */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  padding-top: 70px;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer a {
+  padding: 16px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 767px) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+  .overlay,
+  .drawer {
+    display: none;
+  }
+
+  .menu-desktop {
+    display: block;
+  }
+  .icons {
+     margin: 20px;
+  }
+}
+
+/* ===== ICONOS ===== */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+ 
+  margin-left: auto; /* empuja a la derecha en desktop */
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #EFE8D8; /* línea de los iconos */
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon svg:hover {
+  transform: scale(1.1);
+}
+

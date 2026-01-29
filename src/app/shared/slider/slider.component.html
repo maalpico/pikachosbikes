@@ -1,0 +1,29 @@
+<div
+  class="slider"
+  (touchstart)="onTouchStart($event)"
+  (touchmove)="onTouchMove($event)"
+  (touchend)="onTouchEnd()"
+>
+  <div
+    class="slides"
+    [style.transform]="'translateX(-' + active * 100 + '%)'"
+  >
+    @for (img of images; track $index) {
+      <div
+        class="slide"
+        [style.backgroundImage]="'url(' + img + ')'"
+      ></div>
+    }
+  </div>
+
+  <!-- DOTS -->
+  <div class="dots">
+    @for (_ of images; track $index; let i = $index) {
+    <span
+        class="dot"
+        [class.active]="i === active"
+        (click)="goTo(i)"
+    ></span>
+    }
+  </div>
+</div>
