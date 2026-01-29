@@ -2,15 +2,14 @@
   "name": "pikachosb",
   "version": "0.0.0",
   "scripts": {
-  "ng": "ng",
-  "start": "ng serve",
-  "dev": "ng serve",
-  "build": "ng build",
-  "build:ssr": "ng build",
-  "watch": "ng build --watch --configuration development",
-  "test": "ng test",
-  "serve:ssr": "node dist/pikachosb/server/server.mjs"
-},
+    "start": "npx ng serve",
+    "dev": "npx ng serve",
+    "build": "npx ng build",
+    "build:ssr": "npx ng build && npx ng run pikachosb:server",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test",
+    "serve:ssr": "node dist/pikachosb/server/server.mjs"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "^19.1.0",
