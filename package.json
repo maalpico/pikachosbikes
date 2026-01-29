@@ -6,7 +6,7 @@
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng build && ng run pikachosb:server",
+    "build:ssr": "npx ng build && npx ng run pikachosb:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr": "node dist/pikachosb/server/server.mjs"
